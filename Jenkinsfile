@@ -26,7 +26,11 @@ pipeline {
             steps {
                 // Git Clone
                 git branch: 'master', credentialsId: '3f764bc7-adfa-4011-b91f-759aa4c1678f', url: 'https://github.com/imdeasam1/app_deepaksharma09.git'
-                sh 'kubectl get nodes --kubeconfig=/home/dpk/.kube/config'
+                //ssh in ubuntu vm
+                sshagent(['ubuntu-vm']){
+                    sh 'scp -o StrictHostKeyChecking=no node-deployment.yaml dpk@34.93.167.206:/var/lib/jenkins/workspace/master'
+                    echo 'loginnnnn succcesssss'
+                }
             }
         }
         
