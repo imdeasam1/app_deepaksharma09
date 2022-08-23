@@ -6,9 +6,9 @@ pipeline {
     }
     
     tools {
-      nodejs 'nodejs'
+      //nodejs 'nodejs'
       git 'Default'
-      dockerTool 'docker'
+      //dockerTool 'docker'
       //tool name: 'SonarQubeScanner'
     }
 
