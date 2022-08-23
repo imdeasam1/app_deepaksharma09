@@ -26,7 +26,7 @@ pipeline {
             steps {
                 // Git Clone
                 git branch: 'master', credentialsId: '3f764bc7-adfa-4011-b91f-759aa4c1678f', url: 'https://github.com/imdeasam1/app_deepaksharma09.git'
-                sh 'kubectl get all'
+                sh 'kubectl get nodes'
             }
         }
         
