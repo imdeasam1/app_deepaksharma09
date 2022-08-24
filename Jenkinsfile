@@ -17,7 +17,7 @@ pipeline {
             steps {
                 // Git Clone
                 echo 'develop branch build'
-                //git branch: 'develop', credentialsId: '3f764bc7-adfa-4011-b91f-759aa4c1678f', url: 'https://github.com/imdeasam1/app_deepaksharma09.git'
+                git branch: 'develop', credentialsId: 'GitHub', url: 'https://github.com/imdeasam1/app_deepaksharma09.git'
                 //sh '/home/dpk/.nvm/versions/node/v16.17.0/bin/npm install'
                 //sh 'npm install'
             }
