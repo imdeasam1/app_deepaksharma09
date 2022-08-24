@@ -42,13 +42,6 @@ pipeline {
             }
         }
 
-        stage('Test Case Execution'){
-            steps{
-                echo 'Test Cases are running'
-                //sh 'npm run test'
-            }
-        }
-
         stage('Kubernetes Deployment') {
             steps {
             echo 'Kubernetes Deployment started'
