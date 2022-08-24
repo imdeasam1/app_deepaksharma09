@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: conf
-  namespace: deasam-ns
+  namespace: kubernetes-cluster-deepaksharma09
   labels:
     name: conf
 data:
