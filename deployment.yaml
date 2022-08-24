@@ -3,12 +3,12 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: deasam-app
+  namespace: kubernetes-cluster-deepaksharma09
 spec:
   replicas: 4
   selector:
     matchLabels:
       name: deasam-nodeapp
-      namespace: deasam-ns
   template:
     metadata:
       labels:
