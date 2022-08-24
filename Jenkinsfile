@@ -42,8 +42,10 @@ pipeline {
                     sh 'docker build -t i-deepaksharma09-master:latest .'  
                     sh 'docker tag i-deepaksharma09-master:latest deasam/i-deepaksharma09-master:latest'
                  //Push local docker image to DockerHub
+                    script{
                     withDockerRegistry([ credentialsId: "DockerHub", url: "" ]){                    
                     sh 'docker push deasam/i-deepaksharma09-master:latest'
+                    }
                     }
                 }
             }
