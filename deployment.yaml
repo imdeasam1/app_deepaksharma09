@@ -5,6 +5,8 @@ metadata:
   name: deasam-app
   namespace: kubernetes-cluster-deepaksharma09
 spec:
+  strategy:
+  type: Recreate
   replicas: 4
   selector:
     matchLabels:
