@@ -1,4 +1,4 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: deasam-ns
+  name: kubernetes-cluster-deepaksharma09
