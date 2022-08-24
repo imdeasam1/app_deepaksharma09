@@ -26,7 +26,8 @@ pipeline {
             steps {
                 // Git Clone
                 git branch: 'master', credentialsId: '3f764bc7-adfa-4011-b91f-759aa4c1678f', url: 'https://github.com/imdeasam1/app_deepaksharma09.git'
-                sh 'kubectl get all'
+                sh 'gcloud container clusters get-credentials cluster-2 --zone asia-south1-c --project nagpdocker'
+                sh 'kubectl get nodes'
                 //ssh in ubuntu vm
                 //sshagent(['ubuntu-vm']){
                    // sh 'scp -v -o StrictHostKeyChecking=no deployment.yaml dpk@35.200.200.172:/home/dpk'
