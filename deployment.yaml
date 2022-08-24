@@ -6,7 +6,7 @@ metadata:
   namespace: kubernetes-cluster-deepaksharma09
 spec:
   strategy:
-  type: Recreate
+    type: Recreate
   replicas: 4
   selector:
     matchLabels:
