@@ -38,7 +38,11 @@ pipeline {
                  sh '/var/lib/jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/SonarQubeScanner/bin/sonar-scanner \
                     -e -Dsonar.projectKey=sonar-deepaksharma09 -Dsonar.sources=. \
                     -Dsonar.host.url=http://127.0.0.1:9000 -Dsonar.login=c96fc560a6545e6126430a11d1c68b39dd19f735' 
-                    
+                 //  build docker image
+                    sh 'docker build -t i-deepaksharma09-master:latest .'  
+                    sh 'docker tag i-deepaksharma09-master:latest deasam/i-deepaksharma09-master:latest'
+                    sh 'docker push deasam/i-deepaksharma09-master:latest'
+                        
                 }
             }
         }
