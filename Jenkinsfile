@@ -1,9 +1,9 @@
 pipeline {
     agent any
 
-    //environment {
-        //scannerHome = tool name: 'SonarQubeScanner'
-    //}
+    environment {
+        scannerHome = tool name: 'SonarQubeScanner'
+    }
     
     tools {
       //nodejs 'nodejs'
@@ -13,14 +13,14 @@ pipeline {
     }
 
     stages {
-//        stage('Start SonarQube Analysis') {
-  //          steps {
-    //        echo 'Start SonarQube Analysis'
-      //          withSonarQubeEnv('Test_Sonar') {
-        //        sh '${scannerHome} -Dsonar.projectKey=sonar-deepaksharma09 -Dsonar.sources=. -Dsonar.host.url=http://127.0.0.1:9000 -Dsonar.login=c96fc560a6545e6126430a11d1c68b39dd19f735'
-          //      }
-            //}
-        //}
+        stage('Start SonarQube Analysis') {
+            steps {
+            echo 'Start SonarQube Analysis'
+                withSonarQubeEnv('Test_Sonar') {
+                sh '${scannerHome} -Dsonar.projectKey=sonar-deepaksharma09 -Dsonar.sources=. -Dsonar.host.url=http://127.0.0.1:9000 -Dsonar.login=c96fc560a6545e6126430a11d1c68b39dd19f735'
+                }
+            }
+        }
         
         stage('Build') {
             steps {
