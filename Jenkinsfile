@@ -41,7 +41,12 @@ pipeline {
             steps{
                 echo 'Kubernetes Deployment Started'
                 sh 'gcloud container clusters get-credentials nagp-cluster --zone asia-south1-c --project nagpdocker'
-                sh 'kubectl get nodes'
+                //sh 'kubectl get nodes'
+                sh 'kubectl apply -f namespace.yaml'
+                sh 'kubectl apply -f configmap.yaml,secrets.yaml'
+                sh 'kubectl apply -f deployment.yaml,services.yaml'
+                sh 'kubectl get deployment -n kubernetes-cluster-deepaksharma09'
+                echo 'Kubernetes Deployment FINISHED'           
             }
         }
     }
