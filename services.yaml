@@ -3,7 +3,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: deasam-lb
-  namespace: deasam-ns
+  namespace: kubernetes-cluster-deepaksharma09
 spec:
   type: LoadBalancer
   selector:
