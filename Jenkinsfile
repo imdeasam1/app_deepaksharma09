@@ -19,14 +19,8 @@ pipeline {
                 echo 'master build'
                 
                 git branch: 'master', credentialsId: 'GitHub', url: 'https://github.com/imdeasam1/app_deepaksharma09.git'
-                //sh '/home/dpk/.nvm/versions/node/v16.17.0/bin/npm install'
+
                 sh 'npm install'
-                
-                //ssh in ubuntu vm
-                //sshagent(['ubuntu-vm']){
-                   // sh 'scp -v -o StrictHostKeyChecking=no deployment.yaml dpk@35.200.200.172:/home/dpk'
-                   // echo 'loginnnnn succcesssss'
-                //}
             }
         }
         
