@@ -7,14 +7,14 @@ spec:
   replicas: 4
   selector:
     matchLabels:
-      name: timloo
+      name: deasam-nodeapp
   template:
     metadata:
       labels:
-        name: timloo
+        name: deasam-nodeapp
     spec:
       containers:
-      - name: timloo
+      - name: deasam-nodeapp
         image: deasam/i-deepaksharma09-master:v1
         ports:
         - containerPort: 8080
