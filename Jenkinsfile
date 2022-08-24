@@ -36,7 +36,8 @@ pipeline {
                 withSonarQubeEnv('Test_Sonar') { //Test_Sonar is SonarQube server
                  //sh '${scannerHome}/bin/sonar-scanner -X'
                  sh '/var/lib/jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/SonarQubeScanner/bin/sonar-scanner \
-                    -X -e -Dsonar.projectKey=sonar-deepaksharma09 -Dsonar.sources=. \
+                    //-X \
+                    -e -Dsonar.projectKey=sonar-deepaksharma09 -Dsonar.sources=. \
                     -Dsonar.host.url=http://127.0.0.1:9000 -Dsonar.login=c96fc560a6545e6126430a11d1c68b39dd19f735' 
                     
                 }
@@ -46,7 +47,7 @@ pipeline {
         stage('Kubernetes Deployment') {
             steps {
             echo 'Kubernetes Deployment started'
-            //sh 'kubectl delete all --all -n kubernetes-cluster-deepaksharma09'
+            sh 'kubectl delete all --all -n kubernetes-cluster-deepaksharma09'
             echo 'Kubernetes Deployment Finished'
             }
         }
