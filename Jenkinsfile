@@ -24,7 +24,7 @@ pipeline {
         
         stage('SonarQube Analysis') {
             steps {
-                script {
+                //script {
                //     if (env.BRANCH_NAME == 'main') {
                  //        echo 'Hello from main branch'
                    //  } else {
