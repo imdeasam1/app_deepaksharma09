@@ -46,7 +46,9 @@ pipeline {
         stage('Kubernetes Deployment') {
             steps {
             echo 'Kubernetes Deployment started'
-            sh 'kubectl delete all --all -n kubernetes-cluster-deepaksharma09'
+                //will use recreate deployment strategy
+                sh 'kubectl apply -f deployment.yaml'
+                //sh 'kubectl delete all --all -n kubernetes-cluster-deepaksharma09'
             echo 'Kubernetes Deployment Finished'
             }
         }
