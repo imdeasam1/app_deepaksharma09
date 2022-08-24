@@ -18,7 +18,6 @@ pipeline {
                 // Git Clone
                 echo 'develop branch build'
                 git branch: 'develop', credentialsId: 'GitHub', url: 'https://github.com/imdeasam1/app_deepaksharma09.git'
-                //sh '/home/dpk/.nvm/versions/node/v16.17.0/bin/npm install'
                 sh 'npm install'
             }
         }
@@ -44,8 +43,7 @@ pipeline {
         stage('Test Case Execution'){
             steps{
                 echo 'Test Cases are running'
-                //sh '/home/dpk/.nvm/versions/node/v16.17.0/bin/npm install'
-                 sh 'npm run test'
+                sh 'npm run test'
             }
         }
 
@@ -54,6 +52,7 @@ pipeline {
             echo 'Kubernetes Deployment started'
                 //sh 'gcloud container clusters get-credentials nagp-cluster --zone asia-south1-c --project nagpdocker'
                // sh 'kubectl get nodes'
+            echo 'Kubernetes Deployment Finished'
             }
         }
     }
