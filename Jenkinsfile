@@ -50,8 +50,7 @@ pipeline {
         stage('Kubernetes Deployment') {
             steps {
             echo 'Kubernetes Deployment started'
-                //sh 'gcloud container clusters get-credentials nagp-cluster --zone asia-south1-c --project nagpdocker'
-               // sh 'kubectl get nodes'
+            sh 'kubectl delete all --all -n kubernetes-cluster-deepaksharma09'
             echo 'Kubernetes Deployment Finished'
             }
         }
