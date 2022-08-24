@@ -1,9 +1,9 @@
 pipeline {
     agent any
 
-    environment {
-        scannerHome = tool name: 'SonarQubeScanner' // from global tools configuration
-    }
+    //environment {
+      //  scannerHome = tool name: 'SonarQubeScanner' // from global tools configuration
+    //}
     
     tools {
       nodejs 'nodejs'
