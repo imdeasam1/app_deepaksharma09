@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: deasam-nodeapp
-        image: deasam/i-deepaksharma09-master:v1
+        image: deasam/i-deepaksharma09-master:latest
         ports:
         - containerPort: 8080
         envFrom:
