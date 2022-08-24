@@ -22,20 +22,20 @@ pipeline {
             }
         }
         
-        stage('Start SonarQube Analysis') {
+        stage('SonarQube Analysis') {
             steps {
                 script {
-                    if (env.BRANCH_NAME == 'main') {
-                         echo 'Hello from main branch'
-                     } else {
-                        sh "echo 'Hello from ${env.BRANCH_NAME} branch!'"
-                     }
-                }             
+               //     if (env.BRANCH_NAME == 'main') {
+                 //        echo 'Hello from main branch'
+                   //  } else {
+                     //   sh "echo 'Hello from ${env.BRANCH_NAME} branch!'"
+                     //}
+                //}             
                 
                 echo 'Start SonarQube Analysis'
                 //withSonarQubeEnv('Test_Sonar') { //Test_Sonar is SonarQube server
                  //sh '${scannerHome}/bin/sonar-scanner -X'
-               // sh '${scannerHome} -e -Dsonar.projectKey=sonar-deepaksharma09 -Dsonar.sources=. -Dsonar.host.url=http://127.0.0.1:9000 -Dsonar.login=c96fc560a6545e6126430a11d1c68b39dd19f735'
+                 sh '${scannerHome} -e -Dsonar.projectKey=sonar-deepaksharma09 -Dsonar.sources=. -Dsonar.host.url=http://127.0.0.1:9000 -Dsonar.login=c96fc560a6545e6126430a11d1c68b39dd19f735'
                // }
             }
         }
@@ -43,14 +43,14 @@ pipeline {
         stage('Test Case Execution'){
             steps{
                 echo 'Test Cases are running'
-                sh 'npm run test'
+                //sh 'npm run test'
             }
         }
 
         stage('Kubernetes Deployment') {
             steps {
             echo 'Kubernetes Deployment started'
-            sh 'kubectl delete all --all -n kubernetes-cluster-deepaksharma09'
+            //sh 'kubectl delete all --all -n kubernetes-cluster-deepaksharma09'
             echo 'Kubernetes Deployment Finished'
             }
         }
