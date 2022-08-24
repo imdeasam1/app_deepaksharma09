@@ -19,7 +19,7 @@ pipeline {
                 echo 'develop branch build'
                 git branch: 'develop', credentialsId: 'GitHub', url: 'https://github.com/imdeasam1/app_deepaksharma09.git'
                 //sh '/home/dpk/.nvm/versions/node/v16.17.0/bin/npm install'
-                //sh 'npm install'
+                sh 'npm install'
             }
         }
         
@@ -37,7 +37,7 @@ pipeline {
             steps{
                 echo 'Test Cases are running'
                 //sh '/home/dpk/.nvm/versions/node/v16.17.0/bin/npm install'
-                // sh 'npm run test'
+                 sh 'npm run test'
             }
         }
 
