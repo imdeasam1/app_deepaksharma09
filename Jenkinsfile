@@ -36,6 +36,13 @@ pipeline {
                 //sh 'npm install'
             }
         }
-
+        
+        stage('Kubernetes Deployment'){
+            steps{
+                echo 'Kubernetes Deployment Started'
+                //sh '/home/dpk/.nvm/versions/node/v16.17.0/bin/npm install'
+                //sh 'npm install'
+            }
+        }
     }
 }
